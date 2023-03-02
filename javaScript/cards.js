@@ -7,8 +7,8 @@ const makeCards=()=>{
 
 const showCards=cards=>{
     const defaultCards=document.getElementById('default-cards');
+    cards=cards.slice(0,6);
     cards.forEach(eachCard=> {
-        console.log(eachCard)
     const createDiv=document.createElement('div');
     createDiv.classList.add('col');
     createDiv.innerHTML=`
@@ -22,13 +22,27 @@ const showCards=cards=>{
             <li>3.${eachCard.features[2]}</li>
             </ul>
             <hr>
-            <h5 class="card-title">${eachCard.name}</h5>
-            <p class="card-text">${eachCard.published_in}
-            </p>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h5 class="card-title">${eachCard.name}</h5>
+                    <p class="card-text">${eachCard.published_in}</p>
+                </div>
+                <button onclick="displayMore('${eachCard.id}')" class="btn" data-bs-toggle="modal" data-bs-target="#show-more">
+                    <img src="../icons/more.png" width="40px">
+                </button>
+            </div>
         </div>
     </div>
     `
     defaultCards.appendChild(createDiv);
    })
 }
+
+const displayMore=id=>{
+    const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>console.log(data.data))
+}
+
 makeCards();
