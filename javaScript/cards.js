@@ -42,7 +42,21 @@ const displayMore=id=>{
     const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
     fetch(url)
     .then(res=>res.json())
-    .then(data=>console.log(data.data))
+    .then(data=>showDisplayMore(data.data))
+}
+
+const showDisplayMore=info=>{
+    console.log(info);
+    const modalRight=document.getElementById('modal-right');
+    modalRight.innerHTML=`
+    <div class="card text-center" style="width: 24rem;">
+        <img src="${info.image_link[0]?info.image_link[0] : info.image_link[1]}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${info.input_output_examples[0].input}</h5>
+                <p class="card-text">${info.input_output_examples[0].output}</p>
+            </div>
+    </div>
+    `
 }
 
 makeCards();
