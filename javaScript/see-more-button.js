@@ -8,7 +8,7 @@ const allCards=()=>{
 const seeMoreButton=cards=>{
     const defaultCards=document.getElementById('default-cards');
     defaultCards.innerHTML='';
-
+    
     const removeButton=document.getElementById('see-more');
     removeButton.classList.add('d-none');
 
@@ -40,4 +40,11 @@ const seeMoreButton=cards=>{
     `
     defaultCards.appendChild(createDiv);
    })
-}
+   //---------removed spinner----------------
+   spinner.classList.add('d-none');
+} 
+//----------------added spinner-----------
+const button=document.getElementById('see-more').addEventListener('click',function(){
+    const spinner=document.getElementById('spinner');
+    spinner.classList.remove('d-none');
+})
