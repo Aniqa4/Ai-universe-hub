@@ -21,61 +21,50 @@
         </div>
     </main>
     <!------------------ Modal ---------------------->
-    <section class="modal fade" id="show-more" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="show-moreLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
+    <section  class="modal fade" id="show-more" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="show-moreLabel" aria-hidden="true">
+        <div  class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="p-5 d-flex gap-3 justify-content-center">
-                    <div class="bg-danger-subtle p-5 rounded" style="width: 24rem;">
-                        <h5>description</h5>
-                        <div class="row text-center">
-                            <div class="col bg-white rounded m-2">
-                                <p>$10/</p>
-                                <p>month</p>
-                                <p>Basic</p>
+                <div class="p-5 d-flex gap-5 justify-content-center">
+                    <div style="width: 24rem;" class="bg-danger-subtle p-5 rounded">
+                        <h5 id="description">description</h5>
+                        <div class="row gap-2 text-center mt-3 mb-3">
+                            <div class="col bg-white rounded">
+                                <ul style="list-style:none;">
+                                    <li>$10/</li>
+                                    <li>month</li>
+                                    <li>Basic</li>
+                                </ul>
                             </div>
-                            <div class="col bg-white rounded m-2"> 
-                                <p>$10/</p>
-                                <p>month</p>
-                                <p>Pro</p>
+                            <div class="col bg-white rounded"> 
+                                <ul style="list-style:none;">
+                                    <li>$10/</li>
+                                    <li>month</li>
+                                    <li>Basic</li>
+                                </ul>
                             </div>
-                            <div class="col bg-white rounded m-2">
-                                <p>Contact</p>
-                                <p>us</p>
-                                <p>Enterprise</p>
+                            <div class="col bg-white rounded">
+                                <ul style="list-style:none">
+                                    <li>$10/</li>
+                                    <li>month</li>
+                                    <li>Basic</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <div>
+                            <div id="features">
                                 <h5>Features</h5>
-                            <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                            </ul>
                             </div>
-                            <div>
+                            <div id="integrations">
                                 <h5>Integrations</h5>
-                            <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                            </ul>
                             </div>
                         </div>
                     </div>
-                <div>
-                    <div id="modal-right" class="card" style="width: 24rem;">
-                        <!-- <div>
-                            <img src="${info.logo}" class="card-img-top">
-                               <div class="card-body">
-                                 <h5 class="card-title">Card title</h5>
-                               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              </div>
-                        </div> -->
-                    </div>
+                <!-------------------right side of modal-->
+                <div id="modal-right">
+
                 </div>
                 </div>
             </div>

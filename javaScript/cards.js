@@ -4,7 +4,7 @@ const makeCards=()=>{
     .then(res=>res.json())
     .then(data=>showCards(data.data.tools))
 }
-
+//-------------------- 6 default Cards-------------------------
 const showCards=cards=>{
     const defaultCards=document.getElementById('default-cards');
     cards=cards.slice(0,6);
@@ -38,6 +38,7 @@ const showCards=cards=>{
    })
 }
 
+//----------------------------more informations of cards on a modal------------------
 const displayMore=id=>{
     const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
     fetch(url)
@@ -47,6 +48,7 @@ const displayMore=id=>{
 
 const showDisplayMore=info=>{
     console.log(info);
+    //-----------------------right div of modal----------------------
     const modalRight=document.getElementById('modal-right');
     modalRight.innerHTML=`
     <div class="card text-center" style="width: 24rem;">
@@ -57,6 +59,30 @@ const showDisplayMore=info=>{
             </div>
     </div>
     `
+    //--------------------left div of modal---------------
+    //--------------------description-----------------
+    const descriptionSection=document.getElementById('description');
+    descriptionSection.innerText=`${info.description}`
+
+    //-------------------integrations----------------
+    const integrations=document.getElementById('integrations');
+    const listOfIntegrations=document.createElement('ul')
+    listOfIntegrations.innerHTML=`
+        <li>${info.integrations[0]}</li>
+        <li>${info.integrations[1]}</li>
+        <li>${info.integrations[2]}</li>
+    `
+    integrations.appendChild(listOfIntegrations)
+
+    //-------------------features----------------------
+    const features=document.getElementById('features');
+    const listOfFeatures=document.createElement('ul')
+    listOfFeatures.innerHTML=`
+        <li>${info.features['1'].feature_name}</li>
+        <li>${info.features['2'].feature_name}</li>
+        <li>${info.features['3'].feature_name}</li>
+    `
+    features.appendChild(listOfFeatures)
 }
 
 makeCards();
