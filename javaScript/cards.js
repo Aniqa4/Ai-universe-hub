@@ -47,11 +47,10 @@ const displayMore=id=>{
 }
 
 const showDisplayMore=info=>{
-    console.log(info);
     //-----------------------right div of modal----------------------
     const modalRight=document.getElementById('modal-right');
     modalRight.innerHTML=`
-    <div class="card text-center" style="width: 24rem;">
+    <div class="card text-center" style="height: 24rem; width:24rem ;">
         <img src="${info.image_link[0]?info.image_link[0] : info.image_link[1]}" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">${info.input_output_examples[0].input}</h5>
@@ -66,6 +65,7 @@ const showDisplayMore=info=>{
 
     //-------------------integrations----------------
     const integrations=document.getElementById('integrations');
+    integrations.innerHTML='<h5>Integrations</h5>'
     const listOfIntegrations=document.createElement('ul')
     listOfIntegrations.innerHTML=`
         <li>${info.integrations[0]}</li>
@@ -76,6 +76,7 @@ const showDisplayMore=info=>{
 
     //-------------------features----------------------
     const features=document.getElementById('features');
+    features.innerHTML='<h5>Features</h5>';
     const listOfFeatures=document.createElement('ul')
     listOfFeatures.innerHTML=`
         <li>${info.features['1'].feature_name}</li>
