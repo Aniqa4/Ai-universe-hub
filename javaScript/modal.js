@@ -8,6 +8,7 @@ const displayMore=id=>{
 
 const showDisplayMore=info=>{
     //-----------------------right div of modal----------------------
+    if(info.integrations&&info.features&&info.pricing){
     const modalRight=document.getElementById('modal-right');
     if(!!info.accuracy.score){
         modalRight.innerHTML=`
@@ -64,7 +65,6 @@ const showDisplayMore=info=>{
     const pro=document.getElementById('pro');
     const enterprise=document.getElementById('enterprise');
 
-    console.log(Object.values(info.pricing));
     basic.innerHTML=`
     <ul style="list-style:none;" class="p-0 pt-2 text-success fw-bold">
         <li>${Object.values(info.pricing[0])[1]}</li>
@@ -83,8 +83,52 @@ const showDisplayMore=info=>{
         <li>${Object.values(info.pricing[2])[0]}</li>
     </ul>
     `
+}
+else{
+    noData=document.getElementById('body');
+    noData.innerHTML=`
+    <div id="body" class="row p-5 d-flex gap-5 justify-content-center">
+        <!--------------------------left side of modal--------------->
+        <div class="bg-danger-subtle p-5 rounded col">
+            <h6>${info.description}</h5>
+            <div class="row gap-2 text-center mt-3 mb-3">
+                <div  class="col bg-white rounded">
+                    <ul style="list-style:none;" class="p-0 pt-2 text-success fw-bold"><li>No data found</li></ul>    
+                </div>
+                <div class="col bg-white rounded"> 
+                      <ul style="list-style:none;" class="p-0 pt-2 text-warning fw-bold"><li>No found</li></ul>  
+                </div>
+                <div class="col bg-white rounded">
+                     <ul style="list-style:none;" class="p-0 pt-2 text-danger fw-bold"><li>No found</li></ul>         
+                </div>
+            </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5>Features</h5>
+                        <ul><li>No Data Found</li></ul>
+                    </div>
+                    <div >
+                        <h5>Integrations</h5>
+                        <ul>
+                            <li>No data found</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <!---------------right side of modal-------->
+            <div class="col">
+            <div class="card text-center p-3">
+                <img src="${info.image_link}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">'Can you give any example?'</h5>
+                    <p class="card-text">'no! not yet! take a break!!'</p>
+                </div>
+            </div>
 
-    
+            </div>
+    </div>
+    `
+}
 }
 
 makeCards();
