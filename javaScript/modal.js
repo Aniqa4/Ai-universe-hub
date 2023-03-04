@@ -8,7 +8,7 @@ const displayMore=id=>{
 
 const showDisplayMore=info=>{
     //-----------------------right div of modal----------------------
-    if(info.integrations&&info.features&&info.pricing){
+    if(!!info.integrations){
     const modalRight=document.getElementById('modal-right');
     if(!!info.accuracy.score){
         modalRight.innerHTML=`
@@ -22,7 +22,7 @@ const showDisplayMore=info=>{
         </div>
         `
     }
-    else{
+    if (!info.accuracy.score) {
     modalRight.innerHTML=`
     <div class="card text-center p-3">
         <img src="${info.image_link[0]?info.image_link[0] : info.image_link[1]}" class="card-img-top">
@@ -32,6 +32,7 @@ const showDisplayMore=info=>{
             </div>
     </div>
     `}
+
     //--------------------left div of modal---------------
     //--------------------description-----------------
     const descriptionSection=document.getElementById('description');
@@ -84,10 +85,10 @@ const showDisplayMore=info=>{
     </ul>
     `
 }
-else{
+if(!info.integrations){
     noData=document.getElementById('body');
     noData.innerHTML=`
-    <div id="body" class="row p-5 d-flex gap-5 justify-content-center">
+    
         <!--------------------------left side of modal--------------->
         <div class="bg-danger-subtle p-5 rounded col">
             <h6>${info.description}</h5>
@@ -126,7 +127,7 @@ else{
             </div>
 
             </div>
-    </div>
+    
     `
 }
 }
