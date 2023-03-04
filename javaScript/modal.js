@@ -58,16 +58,6 @@ const showDisplayMore=info=>{
     `
     features.appendChild(listOfFeatures)
     }
-
-    /* const features=document.getElementById('features');
-    features.innerHTML='<h5>Features</h5>';
-    const listOfFeatures=document.createElement('ul')
-    listOfFeatures.innerHTML=`
-        <li>${info.features['1'].feature_name}</li>
-        <li>${info.features['2'].feature_name}</li>
-        <li>${info.features['3'].feature_name}</li>
-    `
-    features.appendChild(listOfFeatures) */
 }
 
 makeCards();

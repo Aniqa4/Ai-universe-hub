@@ -8,6 +8,12 @@ const allCards=()=>{
 const seeMoreButton=cards=>{
     const defaultCards=document.getElementById('default-cards');
     defaultCards.innerHTML='';
+
+    const removeSortCardsButton=document.getElementById('sort-cards');
+    removeSortCardsButton.classList.add('d-none');
+
+    const showSortAllCardsButton=document.getElementById('sort-all-cards');
+    showSortAllCardsButton.classList.remove('d-none');
     
     const removeButton=document.getElementById('see-more');
     removeButton.classList.add('d-none');
