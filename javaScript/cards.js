@@ -27,7 +27,7 @@ const showCards=cards=>{
             <div class="d-flex justify-content-between">
                 <div>
                     <h5 class="card-title">${eachCard.name}</h5>
-                    <p class="card-text">${eachCard.published_in}</p>
+                    <p class="card-text"><img src="../icons/calendar.png" width="20px"><span> ${eachCard.published_in}</span></p>
                 </div>
                 <button onclick="displayMore('${eachCard.id}')" class="btn" data-bs-toggle="modal" data-bs-target="#show-more">
                     <img src="../icons/more.png" width="40px">

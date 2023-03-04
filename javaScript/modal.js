@@ -93,13 +93,13 @@ else{
             <h6>${info.description}</h5>
             <div class="row gap-2 text-center mt-3 mb-3">
                 <div  class="col bg-white rounded">
-                    <ul style="list-style:none;" class="p-0 pt-2 text-success fw-bold"><li>No data found</li></ul>    
+                    <ul style="list-style:none;" class="p-0 pt-2 text-success fw-bold"><li>No Data Found</li></ul>    
                 </div>
                 <div class="col bg-white rounded"> 
-                      <ul style="list-style:none;" class="p-0 pt-2 text-warning fw-bold"><li>No found</li></ul>  
+                      <ul style="list-style:none;" class="p-0 pt-2 text-warning fw-bold"><li>No Data found</li></ul>  
                 </div>
                 <div class="col bg-white rounded">
-                     <ul style="list-style:none;" class="p-0 pt-2 text-danger fw-bold"><li>No found</li></ul>         
+                     <ul style="list-style:none;" class="p-0 pt-2 text-danger fw-bold"><li>No Data Found</li></ul>         
                 </div>
             </div>
                 <div class="d-flex justify-content-between">
@@ -110,7 +110,7 @@ else{
                     <div >
                         <h5>Integrations</h5>
                         <ul>
-                            <li>No data found</li>
+                            <li>No Data found</li>
                         </ul>
                     </div>
                 </div>
