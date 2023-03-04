@@ -36,4 +36,5 @@ const showCards=cards=>{
     `
     defaultCards.appendChild(createDiv);
    })
+   
 }

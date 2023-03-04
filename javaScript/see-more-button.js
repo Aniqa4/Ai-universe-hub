@@ -41,10 +41,11 @@ const seeMoreButton=cards=>{
     defaultCards.appendChild(createDiv);
    })
    //---------removed spinner----------------
+   const spinner=document.getElementById('spinner');
    spinner.classList.add('d-none');
 } 
 //----------------added spinner-----------
-const button=document.getElementById('see-more').addEventListener('click',function(){
+document.getElementById('see-more').addEventListener('click',function(){
     const spinner=document.getElementById('spinner');
     spinner.classList.remove('d-none');
 })
