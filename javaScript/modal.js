@@ -12,7 +12,7 @@ const showDisplayMore=info=>{
     if(!!info.accuracy.score){
         modalRight.innerHTML=`
         <div class="card text-center p-3">
-            <img src="${info.image_link[0]?info.image_link[0] : info.image_link[1]}" class="card-img-top">
+            <img src="${info.image_link[0]?info.image_link[0]:info.image_link}" class="card-img-top">
             <button class="btn btn-danger position-absolute top-15 start-50" style="width:150px">${info.accuracy.score*100}% accuracy</button>
                 <div class="card-body">
                     <h5 class="card-title">${info.input_output_examples[0].input?info.input_output_examples[0].input :'Can you give any example?'}</h5>
@@ -37,18 +37,29 @@ const showDisplayMore=info=>{
     descriptionSection.innerText=`${info.description}`
 
     //-------------------integrations----------------
+
     const integrations=document.getElementById('integrations');
-    integrations.innerHTML='<h5>Integrations</h5>'
-    const listOfIntegrations=document.createElement('ol')
-    listOfIntegrations.innerHTML=`
-        <li>${info.integrations[0]?info.integrations[0]:'No data found'}</li>
-        <li>${info.integrations[1]?info.integrations[1]:'No data found'}</li>
-        <li>${info.integrations[2]?info.integrations[2]:'No data found'}</li>
+    integrations.innerText=''
+    info.integrations.forEach(data => {
+        const listOfIntegrations=document.createElement('li')
+        listOfIntegrations.innerHTML=`
+        <li>${data}</li>
     `
     integrations.appendChild(listOfIntegrations)
-
+    });
+    
     //-------------------features----------------------
     const features=document.getElementById('features');
+    features.innerHTML='';
+    for (const data in info.features) {
+        const listOfFeatures=document.createElement('li')
+        listOfFeatures.innerHTML=`
+        <li>${info.features[data].feature_name}</li>
+    `
+    features.appendChild(listOfFeatures)
+    }
+
+    /* const features=document.getElementById('features');
     features.innerHTML='<h5>Features</h5>';
     const listOfFeatures=document.createElement('ul')
     listOfFeatures.innerHTML=`
@@ -56,7 +67,7 @@ const showDisplayMore=info=>{
         <li>${info.features['2'].feature_name}</li>
         <li>${info.features['3'].feature_name}</li>
     `
-    features.appendChild(listOfFeatures)
+    features.appendChild(listOfFeatures) */
 }
 
 makeCards();
