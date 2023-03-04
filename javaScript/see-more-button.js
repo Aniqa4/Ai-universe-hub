@@ -8,12 +8,13 @@ const allCards=()=>{
 const seeMoreButton=cards=>{
     const defaultCards=document.getElementById('default-cards');
     defaultCards.innerHTML='';
-
+    //-------------------------button for sorting------------------
     const removeSortCardsButton=document.getElementById('sort-cards');
     removeSortCardsButton.classList.add('d-none');
 
     const showSortAllCardsButton=document.getElementById('sort-all-cards');
     showSortAllCardsButton.classList.remove('d-none');
+    //---------------------------------------------------------------
     
     const removeButton=document.getElementById('see-more');
     removeButton.classList.add('d-none');
@@ -26,10 +27,11 @@ const seeMoreButton=cards=>{
             <img src="${eachCard.image}" class="card-img-top" height="250px">
         <div class="card-body">
             <h5>Features</h5>
-            <ul style="list-style:none" class="">
-            <li>1.${eachCard.features[0]}</li>
-            <li>2.${eachCard.features[1]}</li>
-            <li>3.${eachCard.features[2]}</li>
+            <ul style="list-style:none">
+            <li>${eachCard.features[0]?eachCard.features[0]:''}</li>
+            <li>${eachCard.features[1]?eachCard.features[1]:''}</li>
+            <li>${eachCard.features[2]?eachCard.features[2]:''}</li>
+            <li>${eachCard.features[3]?eachCard.features[3]:''}</li>
             </ul>
             <hr>
             <div class="d-flex justify-content-between">

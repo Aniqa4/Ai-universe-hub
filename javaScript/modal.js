@@ -58,6 +58,7 @@ const showDisplayMore=info=>{
     `
     features.appendChild(listOfFeatures)
     }
+
 }
 
 makeCards();
