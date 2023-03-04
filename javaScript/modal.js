@@ -59,6 +59,32 @@ const showDisplayMore=info=>{
     features.appendChild(listOfFeatures)
     }
 
+    //--------------------pricing-------------------
+    const basic=document.getElementById('basic');
+    const pro=document.getElementById('pro');
+    const enterprise=document.getElementById('enterprise');
+
+    console.log(Object.values(info.pricing));
+    basic.innerHTML=`
+    <ul style="list-style:none;" class="p-0 pt-2 text-success fw-bold">
+        <li>${Object.values(info.pricing[0])[1]}</li>
+        <li>${Object.values(info.pricing[0])[0]}</li>
+    </ul>
+    `
+    pro.innerHTML=`
+    <ul style="list-style:none;" class="p-0 pt-2 text-warning fw-bold">
+        <li>${Object.values(info.pricing[1])[1]}</li>
+        <li>${Object.values(info.pricing[1])[0]}</li>
+    </ul>
+    `
+    enterprise.innerHTML=`
+    <ul style="list-style:none;" class="p-0 pt-2 text-danger fw-bold">
+        <li>${Object.values(info.pricing[2])[1]}</li>
+        <li>${Object.values(info.pricing[2])[0]}</li>
+    </ul>
+    `
+
+    
 }
 
 makeCards();
